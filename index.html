@@ -35,6 +35,12 @@
             </div>
           </form>
           <div id="output">
+            <div class="card bg-secondary mb-2">
+              <div class="card-block">
+                <h4>Milligrams:</h4>
+                <div id="mgOutput"></div>
+              </div>
+            </div>
             <div class="card bg-primary mb-2">
               <div class="card-block">
                 <h4>Grams:</h4>
@@ -66,6 +72,7 @@
         .addEventListener('input', function (e) {
           document.getElementById('output').style.visibility = 'visible';
           let lbs = e.target.value;
+          document.getElementById('mgOutput').innerHTML = lbs * 453592;
           document.getElementById('gramsOutput').innerHTML = lbs / 0.0022046;
           document.getElementById('kgOutput').innerHTML = lbs / 2.2046;
           document.getElementById('ozOutput').innerHTML = lbs * 16;
